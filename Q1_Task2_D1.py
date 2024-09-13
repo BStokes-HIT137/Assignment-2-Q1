@@ -1,4 +1,3 @@
-
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 #Q1_T2
 #Textbook pp172 the design of the text analysis program
@@ -48,6 +47,7 @@ print('reading')
 #tokenize words to allow nltk library to read only legitimate words
 tokens = nltk.word_tokenize(raw_output_text)
 text = nltk.Text(tokens)
+print('tokenized')
 #address case sensitive situations
 tokens_l = [w.lower() for w in tokens]
 #Remove all non noun words
@@ -59,4 +59,5 @@ freq = nltk.FreqDist(only_nn)
 #most common 30 words
 print(freq.most_common(30))
 
-#WTF
+#this doesnt work but maybe I am getting there??????????
+#reading noted maybe add in more prompts for testing
