@@ -61,3 +61,4 @@ print(freq.most_common(30))
 
 #this doesnt work but maybe I am getting there??????????
 #reading noted maybe add in more prompts for testing
+#pos needs to be defined as a tuple (x,y)
