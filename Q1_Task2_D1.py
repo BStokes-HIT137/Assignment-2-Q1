@@ -51,7 +51,7 @@ print('tokenized')
 #address case sensitive situations
 tokens_l = [w.lower() for w in tokens]
 #Remove all non noun words
-only_nn = [x for (x,y) in output_text if y in ('NN')]
+only_nn = [x for (x,y) in output_txt if y in ('NN')]
 print("searching")
 print("SEARCHING")
 #find the most frequent words
