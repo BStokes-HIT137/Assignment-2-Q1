@@ -1,8 +1,3 @@
-#Extract the ‘text’ in all the CSV files and store them into a single ‘.txt file’.
-#Chaper5_Fundamentals of python pp118
-#ensure default set to plain text
-#writing text to file 'r' input 'w' output 
-
 #talks to the computers operating system to access and manipulate the files
 import os
 #imports functions and tools to manipulate csv files
@@ -14,7 +9,7 @@ input_csv = "E:/chuditchwerkroom/2024_Werkroom/0000_CDU/2024_CDU/2024 SEM 2/HIT1
 
 #set directory name to locate the output text file (use / to avoid conflict) 
 #Do we store these on github to make is executable for all of us?
-output_txt ="E:/chuditchwerkroom/2024_Werkroom/0000_CDU/2024_CDU/2024 SEM 2/HIT137/Working_Python Files/Assignment 2_HIT137_CAS_080/Q1_txt file_output/HIT137_A2_Q1.1.txt"
+output_txt ="E:/chuditchwerkroom/2024_Werkroom/0000_CDU/2024_CDU/2024 SEM 2/HIT137/Working_Python Files/Assignment 2_HIT137_CAS_080/Q1_file_output/HIT137_A2_Q1.1.txt"
 
 #open the output_txt to bring in csv
 with open(output_txt, 'w') as outputfile:
@@ -50,7 +45,6 @@ with open(output_txt, 'w') as outputfile:
                    print('IMPATIENTLY!!!!!!')
                    print('Depending on your particular personality quirks.')
                    #add in running man or interesting loop for terminal viewing fun I am not taking this out NO WAY maybe a countdown.
-print('THANKYOU, Your text has been extracted you can now access HIT137_A2_Q1.1 in notepad')
+print(f'THANKYOU, Your text has been extracted you can now access it in {output_txt}')
 #--------------------------------------------------------------------------------------------------------------
 #My main issue with this so far is how do I do the directory in a general way?? Do we store the input output on github?
-#I havent watched todays github tutorial so maybe that will say how????

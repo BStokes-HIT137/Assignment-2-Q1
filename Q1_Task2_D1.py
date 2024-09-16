@@ -1,18 +1,53 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
 #Q1_T2
-#Textbook pp172 the design of the text analysis program
-#Create a structure Chart?
-#pip install or python3<FILE_NAME>.py install
 
-#Install the libraries(SpaCy – scispaCy – ‘en_core_sci_sm’/’en_ner_bc5cdr_md’).
-#Biomedical information processing library
+#consider creating a virtual environment to install libraries as recommended
+
+#pip install or python3<FILE_NAME>.py install
+import subprocess
+
+#need PyTorch first to run scispacY
+subprocess.run(['pip', 'install','torch'])
+
+subprocess.run(['pip', 'install','https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz'])
+subprocess.run(['pip', 'install','https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bc5cdr_md-0.5.4.tar.gz'])
+subprocess.run(['pip', 'install','git+https://github.com/huggingface/transformers'])
+
+#validate loop to check the installation of the libraries
+try:
+    import torch
+    import en_core_sci_sm
+    import en_ner_bc5cdr_md
+    import transformers
+    print("congratulations all libraries were installed")
+except: ImportError as e:
+    print(f'Error in loading library: {e}')
+
+#load Biobert from hugging face
+from transformers import AutoTokenizer, AutoModel
+tokenizer = AutoTokenizer.from_pretrained("dmis-lab/biobert-base-cased-v1.1")
+
+#tokenize imput
+inputs = tokenizer("Biological systems are complex.", return_tensors = "pt")
+
+#Pass input through the model
+outputs = model(**inputs)
+
+print(outputs)
+
+
 #Link to directory (change to /)
 dir_library="E:/chuditchwerkroom/2024_Werkroom/0000_CDU/2024_CDU/2024 SEM 2/HIT137/Working_Python Files/Assignment 2_HIT137_CAS_080/Q1_Libraries"
 
+#Install the libraries(SpaCy – scispaCy – ‘en_core_sci_sm’/’en_ner_bc5cdr_md’).
+#Biomedical information processing library
 #Install the libraries (Transformers (Hugging Face)
 #pip install git+https://github.com/huggingface/transformers
 #Open sourced library for python that provides access to pre trained transformers models for natural language processing
 #The hugging face hub is a collaboration plarform that hosts opensource models and datasets for machine learning. It is used in conjunction with the transformers library
+
+
 
 #Install any bio-medical model (BioBert) that can detect drugs, diseases, etc from the text).
 #BioBERT: a pre-trained biomedical language representation model for biomedical text mining.
