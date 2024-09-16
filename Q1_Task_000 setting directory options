@@ -1,0 +1,5 @@
+# so options to solve the directory issues
+#Let user input path
+#Distribute Files with script
+#Use os or pathlib
+#Use relative paths

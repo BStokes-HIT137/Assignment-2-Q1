@@ -18,4 +18,5 @@ print('waiting')
 for word, count in top30:
     print(f'{word}: {count}')
 
-print(top30)
+#going to need to sort the filepath problem??????
+#also need to save to csv file . . . . .
